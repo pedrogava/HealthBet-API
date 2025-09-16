@@ -1,22 +1,23 @@
 package com.github.healthbet.api.dto;
-import java.sql.Date;
 
+import java.time.LocalDate;
 import com.github.healthbet.api.model.User;
-public class UserResponse {
 
+public class UserResponse {
     private Long id;
     private String name;
     private String email;
     private String phone;
-    private Date birthdate;
-    // Construtor baseado na entidade User
-    public UserResponse toDto(User user) {
-        this.id = user.getId();
-        this.name = user.getName();
-        this.email = user.getEmail();
-        this.phone = user.getPhone();
-        this.birthdate= user.getBirthdate();
-        return this;
+    private LocalDate birthdate;
+
+    public static UserResponse fromEntity(User user) {
+        UserResponse r = new UserResponse();
+        r.id = user.getId();
+        r.name = user.getName();
+        r.email = user.getEmail();
+        r.phone = user.getPhone();
+        r.birthdate = user.getBirthdate();
+        return r;
     }
 
     // Getters e Setters

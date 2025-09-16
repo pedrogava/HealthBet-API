@@ -1,21 +1,21 @@
 package com.github.healthbet.api.dto;
 
-import java.sql.Date;
+import jakarta.validation.constraints.*;
+import java.time.LocalDate;
 
 public class UserRequestUpdate {
+    @Size(max = 120)
     private String name;
+
+    @Email
+    @Size(max = 150)
     private String email;
+
+    @Size(max = 30)
     private String phone;
-    private Date birthdate;
 
-    public UserRequestUpdate() {}
-
-    public UserRequestUpdate(String name, String email, String phone, Date birthdate) {
-            this.name = name;
-            this.email = email;
-            this.phone = phone;
-            this.birthdate= birthdate;
-    }
+    @Past
+    private LocalDate birthdate;
 
     // Getters e Setters
 
