@@ -43,11 +43,11 @@ public class UserRequestUpdate {
         this.phone = phone;
     }
 
-    public Date getBirthdate() {
+    public LocalDate getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(Date birthdate) {
+    public void setBirthdate(@Past LocalDate birthdate) {
         this.birthdate = birthdate;
     }
 
