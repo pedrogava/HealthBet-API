@@ -1,4 +1,4 @@
-package service;
+package com.github.healthbet.api.service;
 import com.github.healthbet.api.model.User;
 import com.github.healthbet.api.repository.UserRepository;
 import com.github.healthbet.api.service.UserService;
